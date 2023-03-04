@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Button, Form, Loader } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 
 const NewNote = () => {
@@ -70,7 +69,7 @@ const NewNote = () => {
             <div>
                 {
                     isSubmitting
-                        ? <Loader active inline='centered' />
+                        ? <h1>Loading...</h1>
                         : <form onSubmit={handleSubmit}>
                             <input
                                 error={errors.title ? { content: 'Please enter a title', pointing: 'below' } : null}
@@ -84,7 +83,7 @@ const NewNote = () => {
                                 error={errors.description ? { content: 'Please enter a description', pointing: 'below' } : null}
                                 onChange={handleChange}
                             />
-                            <Button type='submit'>Create</Button>
+                            <button type='submit'>Create</button>
                         </form>
                 }
             </div>

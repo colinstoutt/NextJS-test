@@ -1,6 +1,5 @@
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
-import { Button, Card } from "semantic-ui-react";
 
 const Index = ({ notes }) => {
   return (
@@ -10,21 +9,15 @@ const Index = ({ notes }) => {
         {notes.map((note) => {
           return (
             <div key={note._id}>
-              <Card>
-                <Card.Content>
-                  <Card.Header>
-                    <Link href={`/${note._id}`}>{note.title}</Link>
-                  </Card.Header>
-                </Card.Content>
-                <Card.Content extra>
-                  <Link href={`/${note._id}`}>
-                    <Button primary>View</Button>
-                  </Link>
-                  <Link href={`/${note._id}/edit`}>
-                    <Button primary>Edit</Button>
-                  </Link>
-                </Card.Content>
-              </Card>
+              <h1>
+                <Link href={`/${note._id}`}>{note.title}</Link>
+              </h1>
+              <Link href={`/${note._id}`}>
+                <button primary>View</button>
+              </Link>
+              <Link href={`/${note._id}/edit`}>
+                <button primary>Edit</button>
+              </Link>
             </div>
           );
         })}

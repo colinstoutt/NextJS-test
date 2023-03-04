@@ -1,7 +1,6 @@
 import fetch from "isomorphic-unfetch";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Confirm, Button, Loader } from "semantic-ui-react";
 
 const Note = ({ note }) => {
   const [confirm, setConfirm] = useState(false);
@@ -40,7 +39,7 @@ const Note = ({ note }) => {
   return (
     <div className="note-container">
       {isDeleting ? (
-        <Loader active />
+        <h1>Loading...</h1>
       ) : (
         <>
           <h1>{note.title}</h1>
@@ -48,18 +47,12 @@ const Note = ({ note }) => {
           <button onClick={open}>Delete</button>
         </>
       )}
-      <Confirm
-        className="sure"
-        open={confirm}
-        onCancel={close}
-        onConfirm={handleDelete}
-      />
     </div>
   );
 };
 
 Note.getInitialProps = async ({ query: { id } }) => {
-  let res = await fetch(
+  const res = await fetch(
     `https://next-js-test-seven-beta.vercel.app/api/notes/${id}`
   );
   const { data } = await res.json();
