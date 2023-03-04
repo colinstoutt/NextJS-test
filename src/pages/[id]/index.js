@@ -44,7 +44,7 @@ const Note = ({ note }) => {
         <>
           <h1>{note.title}</h1>
           <p>{note.description}</p>
-          <button onClick={open}>Delete</button>
+          <button onClick={handleDelete}>Delete</button>
         </>
       )}
     </div>
