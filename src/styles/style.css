@@ -1,0 +1,53 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: auto;
+}
+
+.navbar {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #008cba;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .navbar-create {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-size: 2rem;
+}
+
+.navbar__brand:hover,
+.navbar-create:hover {
+  color: white;
+}
+
+.sure {
+  margin: auto;
+  font-size: 3rem;
+}
+
+.ui .button {
+  border: 3px solid red;
+  padding: 1rem;
+  background-color: black;
+  font-size: 3rem;
+}
+.ui:hover .button:hover {
+  cursor: pointer;
+  background-color: white;
+}
