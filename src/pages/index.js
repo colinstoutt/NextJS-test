@@ -36,7 +36,9 @@ const Index = ({ notes }) => {
 // next specific function. runs server side, allows us to run some code
 // before the actual component gets rendered out to the page.
 Index.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/notes");
+  const res = await fetch(
+    "https://next-js-test-seven-beta.vercel.app/api/notes"
+  );
   const { data } = await res.json();
 
   return { notes: data };

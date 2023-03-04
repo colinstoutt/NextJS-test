@@ -26,7 +26,7 @@ const EditNote = ({ note }) => {
   const UpdateNote = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/notes/${router.query.id}`,
+        `https://next-js-test-seven-beta.vercel.app/api/notes/${router.query.id}`,
         {
           method: "PUT",
           headers: {
@@ -108,7 +108,9 @@ const EditNote = ({ note }) => {
 };
 
 EditNote.getInitialProps = async ({ query: { id } }) => {
-  let res = await fetch(`http://localhost:3000/api/notes/${id}`);
+  let res = await fetch(
+    `https://next-js-test-seven-beta.vercel.app/api/notes/${id}`
+  );
   const { data } = await res.json();
   return { note: data };
 };

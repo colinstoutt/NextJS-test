@@ -14,9 +14,12 @@ const Note = ({ note }) => {
   const deleteNote = async () => {
     const noteId = router.query.id;
     try {
-      const deleted = await fetch(`http://localhost:3000/api/notes/${noteId}`, {
-        method: "DELETE",
-      });
+      const deleted = await fetch(
+        `https://next-js-test-seven-beta.vercel.app/api/notes/${noteId}`,
+        {
+          method: "DELETE",
+        }
+      );
       router.push("/");
     } catch (error) {
       console.log(error);
@@ -56,7 +59,9 @@ const Note = ({ note }) => {
 };
 
 Note.getInitialProps = async ({ query: { id } }) => {
-  let res = await fetch(`http://localhost:3000/api/notes/${id}`);
+  let res = await fetch(
+    `https://next-js-test-seven-beta.vercel.app/api/notes/${id}`
+  );
   const { data } = await res.json();
 
   return { note: data };
